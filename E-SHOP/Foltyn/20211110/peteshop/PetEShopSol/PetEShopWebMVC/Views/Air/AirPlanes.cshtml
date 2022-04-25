@@ -1,0 +1,23 @@
+﻿@model PetEShopWebMVC.Models.AirPlaneModel
+
+@{
+    ViewData["Title"] = "Airplanes";
+}
+
+
+<h1>List of airplanes</h1>
+
+<table class="table">
+    <tr>
+        <th>Airplane Type</th>
+        <th># of Passengers</th>
+    </tr>
+
+@foreach (var airPlane in Model.AirPlanes)
+{
+    <tr>
+        <td>@airPlane.Type</td>
+        <td>@airPlane.Capacity</td>
+    </tr>
+}
+</table>

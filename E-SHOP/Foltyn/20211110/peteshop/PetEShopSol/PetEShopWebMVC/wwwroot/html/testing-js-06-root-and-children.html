@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Get the document root and the children of an element</title>
+</head>
+<body>
+    <h1>Get the document root and the children of an element</h1>
+    <script type="text/javascript">
+        let docRoot = document.getRootNode();
+        let rootChildren = docRoot.childNodes;
+        //let firstChild = rootChildren[0];
+        //let secondChild = rootChildren[1];
+        ////let rootGrandChildren = firstChild.childNodes;
+        //let rootGrandChildren = secondChild.childNodes;
+        //let firstGrandChild = rootGrandChildren[0];
+        //let secondGrandChild = rootGrandChildren[1];
+
+        console.log(docRoot.nodeName);
+        //console.log(firstChild.nodeName);
+        //console.log(secondChild.nodeName);
+        //console.log(firstGrandChild.nodeName);
+        //console.log(secondGrandChild.nodeName);
+
+        function showTextIfAny(node, indent) {
+            if (node.nodeName === '#text') {
+                console.log(indent + node.textContent);
+            }
+        }
+
+        for (let i = 0; i < rootChildren.length; i++)
+        {
+            let childLevel1 = rootChildren[i];
+            console.log(childLevel1.nodeName);
+            showTextIfAny(childLevel1, '');
+            let childrenLevel1 = childLevel1.childNodes;
+            for (let j = 0; j < childrenLevel1.length; j++)
+            {
+                let childLevel2 = childrenLevel1[j];
+                console.log('   ' + childLevel2.nodeName);
+                showTextIfAny(childLevel2, '   ');
+                let childrenLevel2 = childLevel2.childNodes;
+                for (let k = 0; k < childrenLevel2.length; k++) {
+                    let childLevel3 = childrenLevel2[k];
+                    console.log('      ' + childLevel3.nodeName);
+                    showTextIfAny(childLevel3, '      ');
+                    let childrenLevel3 = childLevel3.childNodes;
+                    for (let m = 0; m < childrenLevel3.length; m++) {
+                        let childLevel4 = childrenLevel3[m];
+                        console.log('         ' + childLevel4.nodeName);
+                        showTextIfAny(childLevel4, '         ');
+                        let childrenLevel4 = childLevel4.childNodes;
+                        for (let n = 0; n < childrenLevel4.length; m++) {
+                            let childLevel5 = childrenLevel4[n];
+                            console.log('            ' + childLevel5.nodeName);
+                            showTextIfAny(childLevel5, '            ');
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <div>
+        <a href="testing-js.html">Back</a>
+    </div>
+</body>
+</html>

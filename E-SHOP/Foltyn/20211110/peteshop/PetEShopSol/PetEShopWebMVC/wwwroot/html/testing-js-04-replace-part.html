@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Replace part of the web page</title>
+</head>
+<body>
+    <h1>Replace part of the web page</h1>
+
+    <p id="myParagraph">
+        I love Paris!
+    </p>
+
+    <script type="text/javascript">
+        function replaceTextInMyParagraph() {
+            let para = document.getElementById("myParagraph");
+            para.innerHTML = "I prefer <b>London</b> to Paris!";
+        }
+    </script>
+
+    <p>
+        Click the button to replace text in the previous paragraph.
+    </p>
+    <button onclick="replaceTextInMyParagraph()">Click me</button>
+    <br />
+    <br />
+
+    <div>
+        <a href="testing-js.html">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test domain</title>
+</head>
+<body>
+
+    <a href="test-javascript-02.html">Go there...</a>
+    <br/>
+    <a href="test-javascript-01-domain.html">Go here...</a>
+
+    <script>
+        //console.log(document.domain);
+        //console.log(document.title);
+        //console.log(document.URL);
+
+        for (let i = 0; i < document.links.length ; i++) {
+            console.log(document.links[i].href);
+        }
+    </script>
+</body>
+</html>

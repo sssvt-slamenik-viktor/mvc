@@ -1,0 +1,40 @@
+﻿@model eshop_Slamenik.Models.SingleItemModel
+
+
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Popis</th>
+        <th>Picture</th>
+        <th>Dostupnost</th>
+    </tr>
+
+    <tr>
+        @{string path = "~/Content/img/" + Model.Item.ID + ".jpg"; }
+        <td>@Model.Item.Name</td>
+        <td>@Model.Item.Popis</td>
+        <td><img src="@Url.Content(path)" style="width:200px;height:200px;" /></td>
+        @if (Model.Item.Availability == null)
+        {
+<td>není skladem</td>
+ }
+else
+{
+<td>@Model.Item.Availability</td>
+}
+
+
+    </tr>
+    @{string a = Model.Item.ID.ToString();}
+    <input type="button" value="Přídat do košíku" onclick="location.href='@Url.Action(a, "Kosik")'" />
+    @{string p = "AddItem/";}
+
+    @using (Html.BeginForm(p, "Home"))
+    {
+        <!--<input type="submit" />-->
+    }
+
+</table>
+

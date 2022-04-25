@@ -1,0 +1,44 @@
+﻿@* @model IEnumerable<PetEShopWebMVC.Models.Shop.ProductListViewModel> *@
+@model PetEShopWebMVC.Models.Shop.ProductListViewModel
+
+@{
+    ViewData["Title"] = "Pet Offer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>We're offering these pets</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Pcs on-stock</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var pet in Model.Pets) {
+        <tr class="center-vertically">
+            <td>@pet.Id</td>
+            <td>@pet.Name</td>
+            <td>@pet.Price <span>USD</span></td>
+            <td>@pet.PiecesOnStock</td>
+            <td><img class="pet-in-list @(pet.IsImageLandscape ? "rotate-by-90-back" : "")" src="/images/pets/@pet.ImageFile" alt="pet image @pet.ImageFile" /></td>
+            <td>
+                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
+                @* @Html.ActionLink("Edit", "edit", "product", new { id = pet.Id }) | *@
+                @* @Html.ActionLink("Edit", "pet-edit", "product", new { id = pet.Id }) | *@
+                @Html.ActionLink("Edit", "pet-edit", "product", new { id = pet.Id }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

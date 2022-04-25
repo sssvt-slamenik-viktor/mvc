@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Change content</title>
+</head>
+<body>
+
+    <h1>Change content</h1>
+
+    <a href="testg4agr2-01-domain.html">Go back</a>
+
+    <p id="myPara">
+        Let's make things better.
+    </p>
+
+    <button onclick="onButtonClick()">
+        Click here to change text in the paragraph.
+    </button>
+
+    <script>
+
+        function onButtonClick() {
+            let myPara = document.getElementById("myPara");
+            myPara.innerHTML = "Hello Dolly!";
+        }
+
+    </script>
+
+</body>
+</html>

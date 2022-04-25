@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Prepare a table with personal information and display it</title>
+</head>
+<body>
+    <h1>Prepare a table with personal information and display it</h1>
+
+
+    <table id="tablePersons">
+        <tr>
+            <td>name</td>
+            <td>age</td>
+            <td>height</td>
+            <td>nationality</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+
+        class Person {
+            constructor(name, age, height, nationality) {
+                this.name = name;
+                this.age = age;
+                this.height = height;
+                this.nationality = nationality;
+            }
+        }
+
+        let john = new Person("John", 25, 190, "US");
+        let mary = new Person("Mary", 22, 172, "US");
+        let april = new Person("April", 19, 175, "CZ");
+        let mark = new Person("Mark", 28, 182, "FR");
+        let david = new Person("David", 36, 180, "GB");
+        let kate = new Person("Kate", 23, 179, "GB");
+        let sandra = new Person("Sandra", 28, 176, "FR");
+
+        let persons = [john, mary, april, mark, david, kate, sandra];
+        for (let i = 0; i < persons.length; i++) {
+            let person = persons[i];
+            console.log(person.name + "   " + person.age);
+        }
+
+        let tablePersons = document.getElementById("tablePersons");
+        //tablePersons
+
+    </script>
+
+
+
+    <div>
+        <a href="testing-spa.html">Back</a>
+    </div>
+</body>
+</html>

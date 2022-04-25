@@ -1,0 +1,32 @@
+﻿@model PetEShopWebMVC.Models.IdentityUsersListModel
+
+@{
+    ViewData["Title"] = "Identity users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Identity users</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Confirmed</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var identityUser in Model.IdentityUsers)
+{
+        <tr>
+            <td>@identityUser.Id</td>
+            <td>@identityUser.UserName</td>
+            <td>@identityUser.Email</td>
+            <td>@identityUser.EmailConfirmed</td>
+        </tr>
+}
+    </tbody>
+</table>
+

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Testing JavaScript timer</title>
+</head>
+<body>
+    <h1>Testing JavaScript timer</h1>
+
+    <p id="demo"></p>
+
+    <script>
+        setInterval(myTimer, 1000);
+
+        function myTimer() {
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+
+
+</body>
+</html>

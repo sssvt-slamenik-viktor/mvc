@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Get hyperlinks from within the document</title>
+</head>
+<body>
+    <h1>Get hyperlinks from within the document</h1>
+
+    <ul>
+        <li><a href="testing-js-01-domain.html">Domain name</a></li>
+        <li><a href="testing-js-02-page-title.html">HTML page title</a></li>
+        <li><a href="testing-js-03-full-url.html">URL</a></li>
+        <li><a href="testing-js-04-replace-part.html">Replace a part of a web page</a></li>
+        <li><a href="testing-js-05-hyperlinks.html">Hyperlinks in the page</a></li>
+    </ul>
+
+    <script type="text/javascript">
+        for (let i = 0; i < document.links.length; i++) {
+            console.log(document.links[i].href);
+        }
+    </script>
+    <div>
+        <a href="testing-js.html">Back</a>
+    </div>
+</body>
+</html>

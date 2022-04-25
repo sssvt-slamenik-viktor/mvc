@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Iterate over object properties</title>
+</head>
+<body>
+
+    <h1>Iterate over object properties</h1>
+
+    <p>
+        Test paragraph :-)
+    </p>
+
+    <script type="text/javascript">
+        let bodyNode = document.getRootNode().childNodes[1].childNodes[2];
+        for (let propertyName in bodyNode) {
+            //if (bodyNode.hasOwnProperty(propertyName)) {
+            if (Object.prototype.toString.call(bodyNode[propertyName]) !== '[object Function]') {
+                console.log(propertyName);
+                console.log(bodyNode[propertyName]);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model eshop_Slamenik.Models.ItemModel
+
+@{
+    //ViewData["Title"] = "List of Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ITEMS</h1>
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+
+
+<table class="table">
+
+        <tr>
+            <th>Name</th>
+            <th>Popis</th>
+        </tr>
+
+        @foreach (var item in Model.Items)
+        {
+            string path = "~/Content/img/"+item.ID+".jpg";
+            <tr>
+                <td><a href="http://localhost:30519/ItemDetail/@item.ID">@item.Name</a></td>
+                <td>@item.Popis</td>
+                <td><img src="@Url.Content(path)" style="width:200px;height:200px;" /></td>
+            </tr>
+            
+        }
+
+    </table>
+    }
+    else
+    {
+        <p>You need to login</p>
+    }
+}
+
+
+

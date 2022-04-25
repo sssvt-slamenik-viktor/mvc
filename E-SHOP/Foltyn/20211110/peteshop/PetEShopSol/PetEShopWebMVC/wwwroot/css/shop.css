@@ -1,0 +1,16 @@
+﻿img.pet-in-list {
+    /* width: 30px; */
+    /* width: 60px; */
+    width: 90px;
+    /* transform: rotate(-90deg); */
+}
+
+.rotate-by-90-back {
+    transform: rotate(-90deg);
+}
+
+tr.center-vertically td {
+    vertical-align: middle;
+}
+
+

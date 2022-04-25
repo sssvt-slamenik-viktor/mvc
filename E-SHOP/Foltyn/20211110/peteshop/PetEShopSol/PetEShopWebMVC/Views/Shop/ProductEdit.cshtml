@@ -1,0 +1,32 @@
+﻿@model PetEShopWebMVC.Models.Shop.ProductEditViewModel
+@using PetEShopWebMVC.BusinessObjects
+
+
+@{
+    ViewData["Title"] = "Pet Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editing the selected pet</h1>
+
+<form id="formEditPet">
+
+    @{
+
+        Pet pet = Model.Pet;
+
+        <input type="text" id="id" name="id" value="@pet.Id" />
+        <br />
+        <input type="text" id="name" name="name" value="@pet.Name" />
+        <br />
+        <input type="text" id="imageFile" name="imageFile" value="@pet.ImageFile" />
+        <br />
+        <input type="text" id="isImageLandscape" name="isImageLandscape" value="@pet.IsImageLandscape.ToString()" />
+        <br />
+        <input type="text" id="price" name="price" value="@pet.Price" />
+        <br />
+        <input type="text" id="piecesOnStock" name="piecesOnStock" value="@pet.PiecesOnStock" />
+
+    }
+
+</form>

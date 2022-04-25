@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Testing HTML domain AAA</title>
+</head>
+<body>
+    <h1>Testing HTML domain BBB</h1>
+    <h2>HTML domain</h2>
+
+
+    <ul>
+        <li><a href="testg4agr2-02-change-content.html">Go to "Change content"</a></li>
+        <li><a href="testg4agr2-01-domain.html">Go to self...</a></li>
+        <li><a href="https://www.wikipedia.org">Wikipedia</a></li>
+    </ul>
+
+
+    <script type="text/javascript">
+
+        //let domainName = document.domain;
+        //console.log(domainName);
+
+        //let pageTitle = document.title;
+        //console.log(pageTitle);
+
+        //let url = document.URL;
+        //console.log(url);
+
+        for (let i = 0; i < document.links.length; i++) {
+            let link = document.links[i];
+            console.log(link.href);
+        }
+
+    </script>
+
+
+
+</body>
+</html>

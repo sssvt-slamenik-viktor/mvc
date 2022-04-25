@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table td.cell {
+            color: black;
+            /* color: green; */
+            background-color: white;
+        }
+
+        table td.dark-blue {
+            /* background-color: #9999aa; */
+            background-color: blue;
+        }
+        table td.fair-blue {
+            background-color: dodgerblue;
+        }
+        table td.light-blue {
+            /* background-color: #9999ff; */
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        <tr><td class="cell light-blue">Mirek</td></tr>
+        <tr><td class="cell dark-blue">Vlaďka</td></tr>
+        <tr><td class="cell light-blue">Lucie</td></tr>
+    -->
+
+    <table id="tableNames">
+        <tr><td class="cell">Adam</td></tr>
+        <tr><td class="cell">Nina</td></tr>
+        <tr><td class="cell">Jan</td></tr>
+        <tr><td class="cell">Jana</td></tr>
+        <tr><td class="cell">Mirek</td></tr>
+        <tr><td class="cell">Vlaďka</td></tr>
+        <tr><td class="cell">Lucie</td></tr>
+        <tr><td class="cell">Karel</td></tr>
+        <tr><td class="cell">Petr</td></tr>
+        <tr><td class="cell">Pavel</td></tr>
+        <tr><td class="cell">Alena</td></tr>
+        <tr><td class="cell">Marie</td></tr>
+        <tr><td class="cell">Zuzka</td></tr>
+        <tr><td class="cell">Vladimír</td></tr>
+    </table>
+
+    <script>
+        setInterval(wave, 1000);
+        //setInterval(wave, 500);
+        //setInterval(wave, 200);
+        //setInterval(wave, 50);
+
+        var tn = document.getElementById("tableNames");
+        var rowCount = tn.rows.length;
+        var clight1 = 0;
+        var cfair1 = 1;
+        var cdark = 2;
+        var cfair2 = 3;
+        var clight2 = 4;
+
+        function wave() {
+            clight1++;
+            if (clight1 >= rowCount) {
+                clight1 = 0;
+            }
+            cfair1++;
+            if (cfair1 >= rowCount) {
+                cfair1 = 0;
+            }
+            cdark++
+            if (cdark >= rowCount) {
+                cdark = 0;
+            }
+            cfair2++;
+            if (cfair2 >= rowCount) {
+                cfair2 = 0;
+            }
+            clight2++;
+            if (clight2 >= rowCount) {
+                clight2 = 0;
+            }
+            //for (let row of tn.rows) {
+            for (let rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+                let row = tn.rows[rowIndex];
+                for (let cell of row.cells) {
+                    if (rowIndex == cdark) {
+                        cell.className = "cell dark-blue";
+                    } else if ((rowIndex == cfair1) || (rowIndex == cfair2)) {
+                        cell.className = "cell fair-blue";
+                    } else if ((rowIndex == clight1) || (rowIndex == clight2)) {
+                        cell.className = "cell light-blue";
+                    } else {
+                        cell.className = "cell";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

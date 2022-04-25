@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test replacing part of DOM</title>
+</head>
+<body>
+
+    <a href="testp4bgr1-js-01.html">Go to 01</a>
+    <br />
+    <a href="testp4bgr1-js-02.html">Go here</a>
+    <br />
+
+    <!--
+    <p id="myParagraph">
+        I love Paris!
+    </p>
+    -->
+
+
+
+    <script>
+                    //function changeParagraphContents() {
+                    //    let para = document.getElementById("myParagraph");
+                    //    para.innerHTML = "I prefer <b>New York</b>.";
+                    //}
+        for (let i = 0; i < document.links.length; i++) {
+            let currentLink = document.links[i];
+            console.log(currentLink.href);
+        }
+    </script>
+
+
+    <!--
+    <button onclick="changeParagraphContents()">Click here...</button>
+    <p>
+        Click the button to change the contents of the first para.
+    </p>
+    -->
+
+</body>
+</html>

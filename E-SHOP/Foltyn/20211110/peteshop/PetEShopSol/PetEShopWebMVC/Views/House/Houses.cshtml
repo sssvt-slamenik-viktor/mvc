@@ -1,0 +1,24 @@
+﻿@model PetEShopWebMVC.Models.HouseModel
+
+@{
+    ViewData["Title"] = "Houses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Houses</h1>
+
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Width</th>
+        <th>Length</th>
+    </tr>
+@foreach (var house in Model.Houses)
+{
+    <tr>
+        <td>@house.Description</td>
+        <td>@house.Width</td>
+        <td>@house.Length</td>
+    </tr>
+}
+</table>

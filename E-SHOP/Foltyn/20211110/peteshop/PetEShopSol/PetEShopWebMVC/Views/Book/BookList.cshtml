@@ -1,0 +1,28 @@
+﻿@model PetEShopWebMVC.Models.BookModel
+
+@{
+    ViewData["Title"] = "List of Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>List of Books</h1>
+
+
+<table class="table">
+
+    <tr>
+        <th>Title</th>
+        <th>Published In</th>
+    </tr>
+
+    
+@foreach (var book in Model.Books)
+{
+    <tr>
+         <td>@book.Title</td>
+        <td>@book.PublishedIn</td>
+    </tr>
+}
+
+</table>
